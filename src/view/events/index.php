@@ -4,7 +4,7 @@
   <header class="section-title">
     <h1>Volgende evenementen</h1>
   </header>
-  <div class="program-events">
+  <div class="program-events flex-next">
 
     <?php
     foreach( $events as $event ):

@@ -38,6 +38,8 @@ class EventDAO extends DAO {
         $columnName = 'ma3_dok_tags.tag';
       } else if($columnName == 'start') {
         $columnName = 'ma3_dok_events.start';
+      } else if($columnName == 'id') {
+        $columnName = 'ma3_dok_events.id';
       }
       //handle functions
       if(!empty($condition['function'])) {

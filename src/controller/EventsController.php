@@ -108,4 +108,27 @@ class EventsController extends Controller {
     $this->set('events', $events);
   }
 
+  public function detail() {
+    $eventitem = false;
+    if(!empty($_GET['id'])) {
+        $eventitem = $this->eventDAO->selectById($_GET['id']);
+        //$location = $this->eventDAO->_getEventIdsFromResult($_GET['id']);
+    }
+    if(empty($eventitem)) {
+        $this->redirect('index.php');
+    }
+    $this->set('eventitem', $eventitem);
+    //$this->set('location', $location);
+
+    $conditions = array();
+    $conditions[0] = array(
+      'field' => 'id',
+      'comparator' => '=',
+      'value' => $_GET["id"]
+   );
+   $events = $this->eventDAO->search($conditions);
+   $this->set('events', $events);
+
+  }
+
 }

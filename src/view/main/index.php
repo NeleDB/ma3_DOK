@@ -23,7 +23,7 @@
   <section class="intro">
     <div class="intro-text">
       <header class="intro-title">
-        <h1>Werkplek voor <span>verpozing</span> &amp; <span>creatieve</span> manoeuvers</h1>
+        <h1>Werkplek voor <strong>verpozing</strong> &amp; <strong>creatieve</strong> manoeuvers</h1>
       </header>
       <p>De hele zomer lang vanaf 1 mei tot 25 september</p>
     </div>
@@ -129,10 +129,10 @@
       <div class="news-img-div">
         <img class="news-img" src="assets/img/news-item1.png" alt="blog1" width="377" height="252">
       </div>
-      <div class="news-text">
+      <div class="news">
         <h1 class="news-title">Dit is Dok 2017</h1>
         <p class="news-date">02 januari 2017</p>
-        <p>DOK gaat in een diepe winterslaap, maar zijn DOKbewoners zijn dat allerminst van plan. We geven je graag een overzicht van wat iedereen zoal van plan is, het komende jaar.</p>
+        <p class="news-text">DOK gaat in een diepe winterslaap, maar zijn DOKbewoners zijn dat allerminst van plan. We geven je graag een overzicht van wat iedereen zoal van plan is, het komende jaar.</p>
         <a class="news-link" target="_blank" href="http://dokgent.be/dokbewoners-wat-na-dok-2016/">Lees meer ></a>
       </div>
     </article>
@@ -140,10 +140,10 @@
       <div class="news-img-div">
         <img class="news-img" src="assets/img/news-item2.png" alt="blog2" width="377" height="252">
       </div>
-      <div class="news-text">
+      <div class="news">
         <h1 class="news-title">Het boek DOK2016</h1>
         <p class="news-date">21 oktober 2016</p>
-        <p>DOK, Ben Benaouisse en Topo Copy vonden elkaar in hun zoektocht naar een manier om 2016 te verslaan, te grijpen of te vatten. Vandaar dit boek: LAT, LIVING APART TOGETHER</p>
+        <p class="news-text">DOK, Ben Benaouisse en Topo Copy vonden elkaar in hun zoektocht naar een manier om 2016 te verslaan, te grijpen of te vatten. Vandaar dit boek: LAT, LIVING APART TOGETHER</p>
         <a class="news-link"  target="_blank" href="http://dokgent.be/publicatie-lat/">Lees meer ></a>
       </div>
     </article>

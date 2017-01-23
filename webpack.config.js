@@ -28,10 +28,10 @@ const copy = new CopyWebpackPlugin([{
 });
 
 const config = {
-  
+
   // no HTML entry points for production build (bundled in JavaScript)
   entry: [
-    require.resolve(`react-dev-utils/webpackHotDevClient`),
+    // require.resolve(`react-dev-utils/webpackHotDevClient`),
     `./src/css/style.css`,
     `./src/js/script.js`
   ],
@@ -43,7 +43,7 @@ const config = {
 
   output: {
     path: path.join(__dirname, `dist`),
-    filename: `js/[name].[hash].js`,
+    filename: `js/[name].js`,
     publicPath
   },
 
@@ -152,7 +152,7 @@ if (process.env.NODE_ENV === `production`) {
 
   //image optimizing
   config.module.rules.push({
-    test: /\.(svg|png|jpe?g|gif)$/,
+    test: /\.(svg|png|jpe?g|gif|webp)$/,
     loader: `image-webpack-loader`,
     enforce: `pre`
   });
