@@ -1,4 +1,66 @@
-
+<section>
+  <header class="section-title">
+    <h1>Filter</h1>
+  </header>
+  <form class="filter" action="index.php?page=program" method="POST">
+    <div>
+      <label for="title">Naam</label>
+      <input type="text" name="title" value=""/>
+    </div>
+    <div class="">
+      <div class="tag">
+        <input class="checkbox" type="checkbox" name="tags[]" id="moestuin" value="moestuin"/>
+        <label for="moestuin">Moestuin</label>
+      </div>
+      <div  class="tag">
+        <input class="checkbox" type="checkbox" name="tags[]" id="cozycozy" value="Cosy Cozy"/>
+        <label for="cozycozy">Cozy Cozy</label>
+      </div>
+      <div  class="tag">
+        <input class="checkbox" type="checkbox" name="tags[]" id="expo" value="expo"/>
+        <label for="expo">Expo</label>
+      </div>
+      <div  class="tag">
+        <input class="checkbox" type="checkbox" name="tags[]" id="gastvrijheid" value="gastvrijheid"/>
+        <label for="gastvrijheid">Gastvrijheid</label>
+      </div>
+      <div  class="tag">
+        <input class="checkbox" type="checkbox" name="tags[]" id="circus" value="circus"/>
+        <label for="circus">Circus</label>
+      </div>
+      <div  class="tag">
+        <input class="checkbox" type="checkbox" name="tags[]" id="voorstelling" value="voorstelling"/>
+        <label for="voorstelling">Voorstelling</label>
+      </div>
+      <div  class="tag">
+        <input class="checkbox" type="checkbox" name="tags[]" id="concert" value="concert"/>
+        <label for="concert">Concert</label>
+      </div>
+      <div  class="tag">
+        <input class="checkbox" type="checkbox" name="tags[]" id="werkgroep" value="werkgroep"/>
+        <label for="werkgroep">Werkgroep</label>
+      </div>
+      <div  class="tag">
+        <input class="checkbox" type="checkbox" name="tags[]" id="dj" value="dj"/>
+        <label for="dj">dj</label>
+      </div>
+      <div  class="tag">
+        <input class="checkbox" type="checkbox" name="tags[]" id="zondag" value="zondag"/>
+        <label for="zondag">Zondag</label>
+      </div>
+      <div  class="tag">
+        <input class="checkbox" type="checkbox" name="tags[]" id="rommelmarkt" value="rommelmarkt"/>
+        <label for="rommelmarkt">Rommelmarkt</label>
+      </div>
+      <div  class="tag">
+        <input class="checkbox" type="checkbox" name="tags[]" id="film" value="film"/>
+        <label for="film">Film</label>
+      </div>
+    </div>
+    <input type="submit" name="action" value="search"/>
+    <input type="submit" name="action" value="verwijder filter"/>
+  </form>
+</section>
 
 <section class="program">
   <header class="section-title">

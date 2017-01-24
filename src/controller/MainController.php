@@ -26,9 +26,6 @@ class MainController extends Controller {
     $events = $this->eventDAO->search($conditions);
     $this->set('events', $events);
 	}
-
-
-
 }
 
 ?>

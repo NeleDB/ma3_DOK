@@ -24,6 +24,11 @@ body {
   justify-content: space-around;
 }
 
+.flex-under {
+  display: flex;
+  flex-direction: column;
+}
+
 .navigation {
   border-top: 5rem solid var(--lightpink);
   width: 100vw;
@@ -151,8 +156,9 @@ span {
 .intro-extra {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: -15rem;
+  margin-left: +25vw;
 }
 
 .intro-picture {
@@ -209,8 +215,6 @@ span {
     height: 20vw;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     object-fit: cover;
-    background-image: url(../assets/img/overlay.png);
-    background-size: 100%;
 
     &:hover {
       opacity: .5;
@@ -226,8 +230,8 @@ span {
 
   &-date {
     border: .2rem solid white;
-    width: 30%;
-    height: 50%;
+    width: 20%;
+    height: 7rem;
     text-align: center;
     display: flex;
     align-items: center;
@@ -251,10 +255,10 @@ span {
     margin-left: -20%;
   }
 
-  & .flex-next {
-    display: flex;
-    flex: 1;
-  }
+  //& .flex-next {
+  //  display: flex;
+  //  flex: 1;
+  //}
 }
 
 .numbers {
@@ -298,7 +302,7 @@ span {
 .news-img-div {
   background: url(../assets/svg/pattern3.svg);
   background-size: 5%;
-  width: 100%;
+  width: 70vw;
   display: flex;
   justify-content: flex-end;
   margin-right: 2rem;
@@ -334,6 +338,7 @@ span {
   flex-direction: column;
   align-items: center;
   background: url(../assets/svg/border-bottom.svg) repeat-x;
+  background-size: 2%;
 
   &-input {
     border: none;
@@ -351,11 +356,126 @@ span {
   }
 }
 
+.filter {
+  display: flex;
+}
+
+.tag {
+  display: flex;
+  align-content: center;
+}
+
+.checkbox {
+  width: 2rem;
+  height: 2rem;
+  border: .1rem solid black;
+  border-radius: 0;
+}
+
 .program-events {
   display: flex;
   flex-wrap: wrap;
   width: 90%;
   margin: auto;
+}
+
+.detail-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  background: url(../assets/svg/pattern.svg);
+  background-size: 15vw;
+  box-shadow: inset 0 4vw 0 0 white, inset 0 -7vw 0 0 white;
+}
+
+.detail-picture {
+  width: 22vw;
+  height: 22vw;
+  background: var(--yellow) url(../assets/svg/pattern2.svg);
+  background-size: 10%;
+
+  &-event {
+    width: 20vw;
+    height: 20vw;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    object-fit: cover;
+  }
+}
+
+.detail-title {
+  @apply --adam-font-title;
+  background: url(../assets/svg/border-bottom.svg) repeat-x;
+  background-position: bottom;
+  background-size: 1.5vw;
+  padding-bottom: 4rem;
+  animation: input-wave .4s infinite linear;
+  cursor: pointer;
+  font-size: 3.2rem;
+}
+
+.praktisch {
+  background: url(../assets/img/pattern.png);
+  background-size: 3%;
+  box-shadow: inset 0 2vw 0 0 white, inset 0 -2vw 0 0 white;
+
+  &-info {
+    background-color: var(--darkpink);
+    color: white;
+    padding: 2vw;
+  }
+
+  & .event-tags {
+    width: 35%;
+  }
+
+  &-title {
+    @apply --adam-font-title;
+  }
+
+  &-descriptie {
+    width: 40vw;
+    margin-left: -20%;
+    background-color: white;
+    padding: 3rem;
+  }
+}
+
+.table {
+  width: 25vw;
+  height: 20rem;
+
+  &-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.media-section {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: var(--lightblue) url(../assets/svg/pattern3.svg);
+  background-size: 3%;
+  padding: 2rem;
+  margin-top: 5rem;
+}
+
+.media {
+  width: 30vw;
+}
+
+.fb-share-button {
+  margin: 2rem 0;
 }
 
 .footer {
@@ -374,4 +494,24 @@ span {
   color: white;
   text-align: right;
   margin-bottom: 2rem;
+}
+
+@media (width <= 1020px) {
+
+  html {
+    font-size: 55%;
+  }
+
+  .navigation-list {
+    width: 95%;
+  }
+
+}
+
+@media (width <= 1020px) {
+
+  html {
+    font-size: 55%;
+  }
+
 }

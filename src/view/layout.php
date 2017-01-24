@@ -2,6 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta property="og:url" content="http://www.your-domain.com/your-page.html" />
+    <meta property="og:type" content="DOK GENT" />
+    <meta property="og:title" content="DOK GENT" />
+    <meta property="og:description" content="Werkplek voor verpozing &amp; creatieve manoeuvers" />
+    <meta property="og:image" content="http://student.howest.be/nele.de.bruycker/20162017/ma3/dok/assets/img/dok-number1.png" />
+</head>
     <title>DOK</title>
     <?php echo $css;?>
     <link rel="stylesheet" href="css/style.css">
@@ -20,6 +26,14 @@
         wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
         s.parentNode.insertBefore(wf, s);
       })(document);
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/nl_BE/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
 
     </script>
   </head>
