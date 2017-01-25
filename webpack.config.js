@@ -31,7 +31,7 @@ const config = {
 
   // no HTML entry points for production build (bundled in JavaScript)
   entry: [
-    //require.resolve(`react-dev-utils/webpackHotDevClient`),
+    require.resolve(`react-dev-utils/webpackHotDevClient`),
     `./src/css/style.css`,
     `./src/js/script.js`
   ],
@@ -43,7 +43,7 @@ const config = {
 
   output: {
     path: path.join(__dirname, `dist`),
-    filename: `js/[name].js`,
+    filename: `js/[name].[hash].js`,
     publicPath
   },
 

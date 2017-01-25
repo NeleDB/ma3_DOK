@@ -5,19 +5,19 @@
     <meta property="og:url" content="http://www.your-domain.com/your-page.html" />
     <meta property="og:type" content="DOK GENT" />
     <meta property="og:title" content="DOK GENT" />
-    <meta property="og:description" content="Werkplek voor verpozing &amp; creatieve manoeuvers" />
-    <meta property="og:image" content="http://student.howest.be/nele.de.bruycker/20162017/ma3/dok/assets/img/dok-number1.png" />
+    <?php echo $fbmeta;?>
 </head>
     <title>DOK</title>
     <?php echo $css;?>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/demo.css"/>
+    <link rel="stylesheet" href="css/theme1.css"/>
 
     <script>
 
       WebFontConfig = {
         custom: {
           families: ['Adam CG'],
-          urls: ['../assets/fonts/adamcg/adamcg.css']
+          urls: ['../dok/assets/fonts/adamcg/adamcg.css']
         }
       };
 
@@ -82,8 +82,6 @@
       <?php echo $content; ?>
     </div>
 
-    <?php echo $js;?>
-
     <footer class="footer">
       <nav>
         <ul class="footer-navigation">
@@ -126,5 +124,7 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript" src="js/caleandar.js"></script>
+    <?php echo $js;?>
   </body>
 </html>

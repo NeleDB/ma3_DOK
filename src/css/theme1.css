@@ -1,0 +1,123 @@
+.cld-main {
+  width: 330px;
+}
+
+.cld-main a {
+  color: #ebb2b3;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cld-datetime {
+  display: flex;
+  margin: 1rem auto;
+  width: 66%;
+  min-width: 100px;
+  max-width: 300px;
+  overflow: hidden;
+}
+
+.cld-datetime .today {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.cld-nav svg {
+  position: relative;
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  fill: #4f556d;
+}
+
+.cld-nav:hover {
+  cursor: pointer;
+}
+
+.cld-nav:hover svg {
+  fill: #76c5c1;
+}
+
+.cld-rwd {
+  float: left;
+}
+
+.cld-fwd {
+  float: right;
+}
+
+.cld-labels {
+  color: #4f556d;
+}
+
+.cld-labels, .cld-days {
+  padding-left: 0;
+}
+
+.cld-label, .cld-day {
+  display: inline-block;
+  width: 14.28%;
+  text-align: center;
+}
+
+.cld-day.today .cld-number {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  background: #666;
+  color: white;
+}
+
+.cld-day.disableDay {
+  opacity: .5;
+}
+
+.cld-day.nextMonth, .cld-day.prevMonth {
+  opacity: .33;
+}
+
+.cld-number {
+  position: relative;
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+}
+
+.cld-title {
+  position: absolute;
+  z-index: 5;
+  display: none;
+  top: 30px;
+  left: 0;
+  padding: 5px 10px;
+  background: white;
+  white-space: nowrap;
+  border: .2rem solid #ebb2b3;
+  border-radius: 5px;
+  font-size: 1.6rem;
+}
+
+.cld-number:hover .cld-title {
+  display: block;
+}
+
+.cld-number.eventday {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  background-color: #ebb2b3;
+}
+
+.cld-number.eventday:hover {
+  cursor: pointer;
+  background: #eee;
+}
+
+.today .cld-number.eventday:hover {
+  background: #888;
+}

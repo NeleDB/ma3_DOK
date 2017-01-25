@@ -14,6 +14,13 @@ class EventsController extends Controller {
   public function index() {
     $conditions = array();
 
+    if (isset($this->isAjax) && $this -> isAjax){
+      $items = $this->eventDAO->selectAll();
+      header("Content-Type", "application/json");
+      die(json_encode($items));
+
+    }
+
     //example: search on title
     //$conditions[0] = array(
     //   'field' => 'title',
@@ -64,23 +71,21 @@ class EventsController extends Controller {
     if(isset($_POST["tags"])){
       $i=0;
       foreach($_POST["tags"] as $tag){
-        $i++;
-        echo $tag.' ';
-        $conditions[0] = array(
+        $conditions[] = array(
            'field' => 'tag',
            'comparator' => '=',
            'value' => $tag
         );
+        $i++;
       }
     } else if(isset($_POST["title"])) {
-      echo $_POST["title"];
-      $conditions[0] = array(
+      $conditions[] = array(
          'field' => 'title',
          'comparator' => 'like',
          'value' => $_POST["title"]
       );
     } else {
-      $conditions[0] = array(
+      $conditions[] = array(
         'field' => 'start',
         'comparator' => '<',
         'value' => 'date("Y-m-d")'

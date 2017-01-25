@@ -1,3 +1,14 @@
+<section class="calendar">
+  <header class="section-title">
+    <h1>agenda</h1>
+  </header>
+  <div class="flex-next">
+    <div class="calendar-picker" id="caleandar">
+    </div>
+    <div class="calendar-detail"></div>
+  </div>
+
+</section>
 <section>
   <header class="section-title">
     <h1>Filter</h1>
