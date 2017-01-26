@@ -11,7 +11,7 @@ const configHtmls = require(`webpack-config-htmls`)();
 const extractCSS = new ExtractTextWebpackPlugin(`css/style.css`);
 
 // change for production build on different server path
-const publicPath = `/`;
+const publicPath = `/nele.de.bruycker/20162017/ma3/dok`;
 
 const port = 3000;
 

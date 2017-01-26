@@ -1,4 +1,4 @@
-
+<?php $_SESSION['page'] = "detail"; ?>
 <?php
 foreach( $events as $event ):
 ?>
@@ -80,7 +80,7 @@ foreach( $events as $event ):
     foreach( $eventssamedate as $eventsamedate ):
     ?>
     <?php if(count($eventssamedate) === 1 && $eventsamedate["id"] === $event["id"] ): ?>
-      <p>Geen evenementen op dezelfde dag</p>
+      <p class="no-events">Geen evenementen op dezelfde dag</p>
     <?php else: ?>
       <article class="event" <?php if($eventsamedate["id"] === $event["id"]) echo 'style="display:none"';?>>
         <a href="index.php?page=detail&id=<?php echo $eventsamedate["id"]?>"><img class="event-picture" src="assets/img/programma-images/<?php echo $eventsamedate["picture"];?>"/></a>

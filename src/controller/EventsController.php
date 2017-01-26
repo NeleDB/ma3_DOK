@@ -64,25 +64,23 @@ class EventsController extends Controller {
     //);
 
     if(isset($_GET["action"]) && $_GET["action"] === 'verwijder filter') {
-      unset($_POST["title"]);
-      unset($_POST["tags"]);
+      unset($_GET["title"]);
+      unset($_GET["tags"]);
     }
 
-    if(isset($_POST["tags"])){
-      $i=0;
-      foreach($_POST["tags"] as $tag){
+    if(isset($_GET["tags"])){
+      foreach($_GET["tags"] as $tag){
         $conditions[] = array(
            'field' => 'tag',
            'comparator' => '=',
            'value' => $tag
         );
-        $i++;
       }
-    } else if(isset($_POST["title"])) {
+    } else if(isset($_GET["title"])) {
       $conditions[] = array(
          'field' => 'title',
          'comparator' => 'like',
-         'value' => $_POST["title"]
+         'value' => $_GET["title"]
       );
     } else {
       $conditions[] = array(

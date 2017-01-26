@@ -2,6 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <title> DOK | <?php echo $_SESSION['page'] ?></title>
+    <meta name="description" content="Paranormalia, het eerste paranormale truck festival"/>
+    <meta name="keywords" content="Paranormalia, truck festival, paranormaal"/>
+    <meta name="author" content="Nele De Bruycker"/>
     <meta property="og:url" content="http://www.your-domain.com/your-page.html" />
     <meta property="og:type" content="DOK GENT" />
     <meta property="og:title" content="DOK GENT" />
@@ -9,15 +13,13 @@
 </head>
     <title>DOK</title>
     <?php echo $css;?>
-    <link rel="stylesheet" href="css/demo.css"/>
     <link rel="stylesheet" href="css/theme1.css"/>
-
     <script>
 
       WebFontConfig = {
         custom: {
           families: ['Adam CG'],
-          urls: ['../dok/assets/fonts/adamcg/adamcg.css']
+          urls: ['../assets/fonts/adamcg/adamcg.css']
         }
       };
 
@@ -34,7 +36,6 @@
         js.src = "//connect.facebook.net/nl_BE/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-
     </script>
   </head>
   <body>
@@ -44,7 +45,7 @@
           <a class="" href="index.php"><img src="assets/img/dokgent-logo.png" alt="dok-logo" width="111" height="42"></a>
         </li>
         <li class="navigation-item">
-          <a class="navigation-link" href="#">Zones</a>
+          <a class="navigation-link hidden-mobile" href="#">Zones</a>
         </li>
         <li class="navigation-item">
           <a class="navigation-link" href="index.php?page=program">Programma</a>
@@ -53,12 +54,12 @@
           <a class="navigation-link" href="#">Praktisch</a>
         </li>
         <li class="navigation-item">
-          <a class="navigation-link" href="#">Over DOK</a>
+          <a class="navigation-link hidden-mobile" href="#">Over DOK</a>
         </li>
         <li class="navigation-item">
-          <a class="navigation-link" href="#">Blogs</a>
+          <a class="navigation-link hidden-mobile" href="#">Blogs</a>
         </li>
-        <div class="social-links">
+        <div class="social-links hidden-mobile">
           <li class="navigation-item">
             <a href="https://www.facebook.com/DOKgent/"><img src="assets/svg/facebook-icon.svg" alt="facebook"></a>
           </li>
@@ -82,17 +83,17 @@
       <?php echo $content; ?>
     </div>
 
-    <footer class="footer">
+    <footer class="footer" id = "footer">
       <nav>
         <ul class="footer-navigation">
-          <li>
-            <a class="footer-navigation-link" href="#">Zones</a>
+          <li class="mobile-item-zones">
+            <a class="footer-navigation-link mobile-link-zones" href="#footer">Zones</a>
           </li>
-          <li>
+          <li >
             <a class="footer-navigation-link" href="index.php?page=program">Programma</a>
           </li>
-          <li>
-            <a class="footer-navigation-link" href="#">Praktisch</a>
+          <li class="mobile-item-praktisch">
+            <a class="footer-navigation-link mobile-link-praktisch" href="#footer">Praktisch</a>
           </li>
           <li>
             <a class="footer-navigation-link" href="#">Over DOK</a>
@@ -124,7 +125,9 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="js/caleandar.js"></script>
     <?php echo $js;?>
+    <?php  if($_SESSION['page'] === "program"): ?>
+      <script type="text/javascript" src="js/caleandar.js"></script>
+    <?php endif; ?>
   </body>
 </html>

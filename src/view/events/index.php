@@ -1,24 +1,28 @@
+<?php $_SESSION['page'] = "program"; ?>
+
 <section class="calendar">
   <header class="section-title">
     <h1>agenda</h1>
   </header>
-  <div class="flex-next">
+  <div class="calendar-part" id="calendar">
     <div class="calendar-picker" id="caleandar">
     </div>
     <div class="calendar-detail"></div>
   </div>
-
+  <a class="open-calendar hidden" href="#calendar">Open agenda &#9661;</a>
 </section>
-<section>
+<section class="filter">
   <header class="section-title">
     <h1>Filter</h1>
   </header>
-  <form class="filter" action="index.php?page=program" method="POST">
+  <form class="filter-form" action="index.php?" method="GET" id="filter">
+    <span><input type="text" name="page" value="program"/></span>
     <div>
       <label for="title">Naam</label>
       <input type="text" name="title" value=""/>
     </div>
-    <div class="">
+    <p class="filter-tags">Tags</p>
+    <div class="filter-form-tags">
       <div class="tag">
         <input class="checkbox" type="checkbox" name="tags[]" id="moestuin" value="moestuin"/>
         <label for="moestuin">Moestuin</label>
@@ -68,8 +72,11 @@
         <label for="film">Film</label>
       </div>
     </div>
-    <input type="submit" name="action" value="search"/>
-    <input type="submit" name="action" value="verwijder filter"/>
+    <a class="filter-more hidden" href="#filter">Meer filters &#9661;</a>
+    <div class="flex-next filter-buttons">
+      <input class="button filter-button" type="submit" name="action" value="search">
+      <input class="filter-delete" type="submit" name="action" value="verwijder filter"/>
+    </div>
   </form>
 </section>
 
@@ -78,7 +85,9 @@
     <h1>Volgende evenementen</h1>
   </header>
   <div class="program-events flex-next">
-
+    <?php if(empty($events)):?>
+      <p class="no-events">Er zijn geen evenementen met deze tags</p>
+    <?php else: ?>
     <?php
     foreach( $events as $event ):
     ?>
@@ -114,5 +123,6 @@
         </div>
       </article>
     <?php endforeach; ?>
+    <?php endif; ?>
   </div>
 </section>

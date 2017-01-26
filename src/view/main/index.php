@@ -1,3 +1,4 @@
+<?php $_SESSION['page'] = "home"; ?>
 <header class="header">
   <picture class="header-image">
     <source type="image/webp" srcset="assets/img/header.webp" height="613" width="1052" />
@@ -40,8 +41,8 @@
           <path d="M681.604882,102.417132 C681.604882,102.417132 689.717475,76.6052046 735.344232,63.7590684 C780.97099,50.9129321 772.068675,25.704065 813.608025,12.8052807 C855.147375,-0.0935036694 941.203087,-4.04689731 946.582765,131.373586 C951.962444,266.79407 889.282488,371.305333 754.44592,345.325889 C619.609352,319.346446 600.100838,219.808035 600.100838,202.716547 C600.100838,185.62506 601.393109,178.096381 601.393109,178.096381 L685.094015,178.488849 L681.604882,102.417132 Z" id="Path-2" stroke="none" fill="url(#pattern-1)" fill-rule="evenodd"></path>
       </svg>
       <picture class="intro-picture">
-        <img src="assets/img/intro-picture.png" alt="dok-picture" width="447" height="298"/>
         <source type="image/webp" srcset="assets/img/intro-picture.webp" />
+        <img class="intro-picture" src="assets/img/intro-picture.png" alt="dok-picture" width="447" height="298"/>
       </picture>
     </div>
   </section>
@@ -92,27 +93,28 @@
         </article>
       <?php endforeach; ?>
     </div>
+    <a class="programma-button" href="index.php?page=program"><button type="button" class="button">Programma | &rarr; </button></a>
   </section>
   <section class="dok-numbers">
     <header>
       <h1 class="section-title">Dok in cijfers</h1>
     </header>
     <div class="numbers">
-      <article>
+      <article class="numbers-article">
         <div class="number">
           <img class="number-image" src="assets/img/dok-number1.png" alt="dokbewoners" width="155px" height="155px"/>
           <p class="number-text">267</p>
         </div>
         <p class="number-title">DOKbewoners</p>
       </article>
-      <article>
+      <article class="numbers-article">
         <div class="number">
           <img class="number-image" src="assets/img/dok-number2.png" alt="dokbezoekers" width="155px" height="155px"/>
           <p class="number-text">1058</p>
         </div>
         <p class="number-title">Bezoekers in 2016</p>
       </article>
-      <article>
+      <article class="numbers-article">
         <div class="number">
           <img class="number-image" src="assets/img/dok-number3.png" alt="creatieve-manoeuvers" width="155px" height="155px"/>
           <p class="number-text">457</p>
