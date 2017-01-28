@@ -1,9 +1,13 @@
 <?php
 foreach( $events as $event ):
 ?>
+<?php $info = pathinfo($event["picture"]);?>
 <header class="detail-header">
   <div class="detail-picture">
-    <img class="detail-picture-event" src="assets/img/programma-images/<?php echo $event["picture"];?>"/>
+    <picture class="detail-picture-webp">
+      <source type="image/webp" srcset="assets/img/programma-images/<?php echo $info["filename"].'.webp'?>" />
+      <img class="detail-picture-event" src="assets/img/programma-images/<?php echo $event["picture"];?>"/>
+    </picture>
   </div>
   <h1 class="detail-title"><?php echo $event["title"];?></h1>
 </header>

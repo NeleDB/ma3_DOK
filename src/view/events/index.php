@@ -80,19 +80,25 @@
   </form>
 </section>
 
-<section class="program">
+<section class="program" id="events">
   <header class="section-title">
     <h1>Volgende evenementen</h1>
   </header>
   <div class="program-events flex-next">
     <?php if(empty($events)):?>
-      <p class="no-events">Er zijn geen evenementen met deze tags</p>
+      <p class="no-events">Er zijn geen evenementen</p>
     <?php else: ?>
     <?php
     foreach( $events as $event ):
     ?>
+    <?php $info = pathinfo($event["picture"]);?>
       <article class="event">
-        <a href="index.php?page=detail&id=<?php echo $event["id"]?>"><img class="event-picture" src="assets/img/programma-images/<?php echo $event["picture"];?>"/></a>
+        <a href="index.php?page=detail&id=<?php echo $event["id"]?>">
+          <picture class="event-picture-div">
+            <source type="image/webp" srcset="assets/img/programma-images/<?php echo $info["filename"].'.webp'?>" />
+            <img class="event-picture" src="assets/img/programma-images/<?php echo $event["picture"];?>"/>
+          </picture>
+        </a>
         <header>
           <h1 class="event-title"><?php echo $event["title"];?></h1>
         </header>
@@ -127,15 +133,21 @@
   </div>
 </section>
 <section class="month-select">
-  <?php $currentMonth = $_GET["month"]-1;
-  $nextMonth = $currentMonth+1;
-  $prevMonth = $currentMonth-1;
+  <?php if (isset($_GET["action"]) && $_GET["action"] === 'search'): ?>
+  <?php else: ?>
+    <?php
+    if(isset($_GET["month"])):
+      $currentMonth = $_GET["month"]-1;
+      $nextMonth = $currentMonth+1;
+      $prevMonth = $currentMonth-1;
+    endif;
 
-  if($nextMonth === 13): $nextMonth = 1;
-  elseif($prevMonth === 0): $prevMonth = 12;
-  endif;
-  ?>
-  <a class="month-select-link" href="index.php?page=program&month=<?php echo $prevMonth ?>"> &#9664;<?php echo $monthArray[$prevMonth-1]?></a>
-  <a class="month-select-link" href="index.php?page=program&month=<?php echo $nextMonth?>"><?php echo $monthArray[$nextMonth-1]?> &#9658;</a>
+    if($nextMonth === 13): $nextMonth = 1;
+    elseif($prevMonth === 0): $prevMonth = 12;
+    endif;
+    ?>
+    <a class="month-select-link" href="index.php?page=program&month=<?php echo $prevMonth ?>#events"> &#9664;<?php echo $monthArray[$prevMonth-1]?></a>
+    <a class="month-select-link" href="index.php?page=program&month=<?php echo $nextMonth?>#events"><?php echo $monthArray[$nextMonth-1]?> &#9658;</a>
+  <?php endif; ?>
 
 </section>

@@ -124,8 +124,20 @@
         </div>
       </div>
     </footer>
+    <section class="sponsors">
+      <a href="http://www.biofresh.be/index.php?id=54"><img src="assets/img/sponsors/biofresh.png" alt="biofresh" width="55" height="39"/></a>
+      <a href="http://www.bionade.de"><img src="assets/img/sponsors/bionade.png" alt="bionade" width="91" height="26"/></a>
+      <a href="https://www.cirq.be"><img src="assets/img/sponsors/cirq.png" alt="cirq" width="42" height="41"/></a>
+      <a href="http://www.democrazy.be"><img src="assets/img/sponsors/demo.png" alt="demo" width="96" height="20"/></a>
+      <a href="http://www.eaulala.be"><img src="assets/img/sponsors/eaulala.png" alt="eaulala" width="48" height="38"/></a>
+      <a href="https://stad.gent"><img src="assets/img/sponsors/gent-vernieuwt.png" alt="gent-vernieuwt" width="96" height="35"/></a>
+      <a href="http://www.pepsi.com/nl-be/d"><img src="assets/img/sponsors/pepsi.png" alt="pepsi" width="75" height="29"/></a>
+      <a href="http://www.sogent.be"><img src="assets/img/sponsors/sogent.png" alt="sogent" width="63" height="42"/></a>
+      <a href="http://www.thuisindestad.be"><img src="assets/img/sponsors/thuisindestad.png" alt="thuisindestad" width="59" height="38"/></a>
+      <a href="http://vedett.be"><img src="assets/img/sponsors/vedette.png" alt="vedette" width="42" height="43"/></a>
+      <a href="http://www.vlaanderen.be/nl"><img src="assets/img/sponsors/vlaamse-overheid.png" alt="vlaamse-overheid" width="110" height="32"/></a>
+
+    </section>
     <?php echo $js;?>
-    <?php  if($_SESSION['page'] === "program"): ?>
-    <?php endif; ?>
   </body>
 </html>

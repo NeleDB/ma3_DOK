@@ -13,20 +13,33 @@ const prakArr = [`Bereikbaarheid`, `DOKBewoner`, `DOKKeuken`];
 const zoneArr = [`Kantine`, `Park`, `Markt`, `Box`, `Arena`];
 
 const init = () => {
-  caleandar();
   const $url = window.location.href;
-  console.log($url);
+  //console.log($url);
   if ($url.includes(`program`)) {
-    hideShow();
-    addEventListener(`resize`, () => hideShow());
+    caleandar();
+    hideShowFilter();
+    addEventListener(`resize`, () => hideShowFilter());
+  } else if ($url.includes(`detail`)) {
+    console.log(`detail`);
+  } else {
+    console.log(`index`);
+    validateEmail();
   }
 
   footerNavigation();
   addEventListener(`resize`, () => footerNavigation());
+
+  const $innerwidth = window.innerWidth;
+  if ($innerwidth < 500) {
+    $prakLink.classList.add(`closed`);
+    $prakLink.innerHTML = `Praktisch &#9661`;
+    $zonesLink.classList.add(`closed`);
+    $zonesLink.innerHTML = `Zones &#9661`;
+  }
 };
 
-const hideShow = () => {
-  console.log(`Hello, DOK`);
+const hideShowFilter = () => {
+  //console.log(`Hello, DOK`);
   const $innerwidth = window.innerWidth;
   $openCalendar.classList.remove(`hidden`);
   $calendar.setAttribute(`style`, `display: none`);
@@ -76,46 +89,29 @@ const clickOpenCalendar = () => {
 
 const footerNavigation = () => {
 
-  const $ulZone = document.createElement(`ul`);
-  const $ulPrak = document.createElement(`ul`);
-
-
-  prakArr.forEach(element => {
-    const $liPrak = document.createElement(`li`);
-    $liPrak.classList.add(`listItemPrak`);
-    $liPrak.classList.add(`hidden`);
-    $liPrak.innerHTML = element;
-    $ulPrak.appendChild($liPrak);
-  });
-
-  zoneArr.forEach(element => {
-    const $liZone = document.createElement(`li`);
-    $liZone.classList.add(`listItemZones`);
-    $liZone.classList.add(`hidden`);
-    $liZone.innerHTML = element;
-    $ulZone.appendChild($liZone);
-  });
-
-  $prakEl.appendChild($ulPrak);
-  $zonesEl.appendChild($ulZone);
-
   const $innerwidth = window.innerWidth;
+
   if ($innerwidth < 500) {
-    $prakLink.innerHTML = `Praktisch &#9661`;
-    $zonesLink.innerHTML = `Zones &#9661`;
     $prakLink.classList.add(`closed`);
     $zonesLink.classList.add(`closed`);
-  } else {
+    if ($prakLink.classList.contains(`closed`)) {
+      $prakLink.innerHTML = `Praktisch &#9661`;
+    }
+    if ($zonesLink.classList.contains(`closed`)) {
+      $zonesLink.innerHTML = `Zones &#9661`;
+    }
+    console.log(`500`);
+    $prakLink.addEventListener(`click`, openPraktisch);
+    $zonesLink.addEventListener(`click`, openZones);
+  } else if ($innerwidth > 500) {
     $prakLink.innerHTML = `Praktisch`;
     $zonesLink.innerHTML = `Zones`;
   }
-
-  $prakLink.addEventListener(`click`, openPraktisch);
-  $zonesLink.addEventListener(`click`, openZones);
-
 };
 
 const openPraktisch = () => {
+  const $ulPrak = document.createElement(`ul`);
+
   if ($prakLink.classList.contains(`closed`)) {
     $prakLink.classList.remove(`closed`);
   } else {
@@ -123,29 +119,73 @@ const openPraktisch = () => {
   }
 
   if ($prakLink.classList.contains(`closed`)) {
-    document.querySelectorAll(`.listItemPrak`).forEach(el => el.classList.add(`hidden`));
+    document.querySelectorAll(`.listItemPrak`).forEach(el => el.remove(el));
     $prakLink.innerHTML = `Praktisch &#9661`;
   } else {
-    document.querySelectorAll(`.listItemPrak`).forEach(el => el.classList.remove(`hidden`));
+    prakArr.forEach(element => {
+      const $liPrak = document.createElement(`li`);
+      $liPrak.classList.add(`listItemPrak`);
+      $liPrak.innerHTML = element;
+      $ulPrak.appendChild($liPrak);
+    });
+    $prakEl.appendChild($ulPrak);
     $prakLink.innerHTML = `Praktisch &#9651`;
   }
 
 };
 
 const openZones = () => {
+  const $ulZones = document.createElement(`ul`);
+
   if ($zonesLink.classList.contains(`closed`)) {
     $zonesLink.classList.remove(`closed`);
-    $zonesLink.innerHTML = `Zones &#9651`;
   } else {
     $zonesLink.classList.add(`closed`);
-    $zonesLink.innerHTML = `Zones &#9661`;
   }
 
   if ($zonesLink.classList.contains(`closed`)) {
-    document.querySelectorAll(`.listItemZones`).forEach(el => el.classList.add(`hidden`));
+    document.querySelectorAll(`.listItemZones`).forEach(el => el.remove(el));
+    $zonesLink.innerHTML = `Zones &#9661`;
   } else {
-    document.querySelectorAll(`.listItemZones`).forEach(el => el.classList.remove(`hidden`));
+    $zonesLink.innerHTML = `Zones &#9651`;
+    zoneArr.forEach(element => {
+      const $liZone = document.createElement(`li`);
+      $liZone.classList.add(`listItemZones`);
+      $liZone.innerHTML = element;
+      $ulZones.appendChild($liZone);
+    });
+    $zonesEl.appendChild($ulZones);
   }
+};
+
+const validateEmail = () => {
+  const $submitButton = document.querySelector(`.nieuwsbrief-button`);
+  $submitButton.addEventListener(`click`, checkEmail);
+};
+
+const checkEmail = e => {
+  console.log(e);
+  const $email = document.querySelector(`.nieuwsbrief-input`);
+  const $error = document.querySelector(`.error`);
+  if (valueMissing($email) !== ``) {
+    $error.innerHTML = valueMissing($email);
+  } else {
+    $error.innerHTML = typeMismatch($email);
+  }
+};
+
+const valueMissing = $veld => {
+  if ($veld.validity.valueMissing) {
+    return `U heeft niets ingevuld`;
+  }
+  return ``;
+};
+
+const typeMismatch = $veld => {
+  if ($veld.validity.typeMismatch) {
+    return `Geen geldig e-mail adres`;
+  }
+  return ``;
 };
 
 init();

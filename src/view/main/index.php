@@ -28,7 +28,7 @@
       <p>De hele zomer lang vanaf 1 mei tot 25 september</p>
     </div>
     <div class="intro-extra">
-      <a href="#"><button type="button" class="button intro-button">Meer over DOK | &rarr; </button></a>
+      <a href="#"><button type="button" class="button intro-button">Over DOK | </button></a>
       <svg class="intro-svg" width="347px" height="344px" viewBox="600 6 347 344" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs>
               <pattern id="pattern-1" width="50" height="50" x="550.100838" y="-43.1549552" patternUnits="userSpaceOnUse">
@@ -92,7 +92,7 @@
         </article>
       <?php endforeach; ?>
     </div>
-    <a class="programma-button" href="index.php?page=program"><button type="button" class="button">Programma | &rarr; </button></a>
+    <a class="programma-button" href="index.php?page=program"><button type="button" class="button">Programma | </button></a>
   </section>
   <section class="dok-numbers">
     <header>
@@ -152,8 +152,9 @@
   <section class="nieuwsbrief">
     <div class="flex-next nieuwsbrief-zin">
       <img src="assets/svg/enveloppe.svg" alt="email-enveloppe" width="70px" height="37px"/>
-      <p>Ik ontvang graag op <input class="nieuwsbrief-input" type="email" name="email" value="" placeholder="email adres"/> mails over DOK</p>
+      <p>Ik ontvang graag op <input class="nieuwsbrief-input" type="email" name="email" value="" placeholder="email adres" required/> mails over DOK</p>
     </div>
-    <a href="#"><button type="button" class="button nieuwsbrief-button">Inschrijven | &rarr; </button></a>
+    <p class="error"></p>
+    <button type="submit" class="button nieuwsbrief-button" value="">Inschrijven |  </button></a>
   </section>
 </main>

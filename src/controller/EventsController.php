@@ -66,6 +66,7 @@ class EventsController extends Controller {
     if(isset($_GET["action"]) && $_GET["action"] === 'verwijder filter') {
       unset($_GET["title"]);
       unset($_GET["tags"]);
+      $month = date('m');
     }
 
     if(isset($_GET["tags"])){

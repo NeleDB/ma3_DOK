@@ -139,15 +139,44 @@ span {
 .button {
   background-color: var(--lightblue);
   border: .5rem solid var(--darkblue);
+  margin-top: 2rem;
   border-radius: 5rem;
-  font-size: 2.4rem;
+  font-size: 2.1rem;
   color: white;
-  font-weight: normal;
-  padding: .5rem 2rem;
-  min-width: 25rem;
+  min-width: 20rem;
+  overflow: hidden;
+  cursor: pointer;
+  padding: .5rem 1rem;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  transition: all .3s;
+
+  &::before {
+    content: ' \2192';
+    position: absolute;
+    color: white;
+    transition: all .3s;
+    left: 50%;
+    opacity: 0;
+    top: 15%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    transition: all .3s;
+  }
 
   &:hover {
-    cursor: pointer;
+    padding: .5rem 4rem .5rem 1rem;
+    background-color: var(--darkblue);
+
+    &::before {
+      left: 80%;
+      opacity: 1;
+    }
   }
 }
 
@@ -235,6 +264,11 @@ span {
     height: 20vw;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     object-fit: cover;
+
+    &-div {
+      width: 100%;
+      height: 100%;
+    }
 
     &:hover {
       opacity: .5;
@@ -374,6 +408,10 @@ span {
   &-zin {
     background-color: white;
   }
+}
+
+.error {
+  color: var(--darkpink);
 }
 
 .calendar {
@@ -525,12 +563,12 @@ span {
     width: 22vw;
     height: 22vw;
     background: var(--yellow) url(../assets/svg/pattern2.svg);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     background-size: 10%;
 
-    &-event {
+    &-event, &-webp {
       width: 20vw;
       height: 20vw;
-      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
       object-fit: cover;
     }
   }
@@ -629,6 +667,15 @@ span {
   color: white;
   text-align: right;
   margin-bottom: 2rem;
+}
+
+.sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 95vw;
 }
 
 @media (width <= 1020px) {
