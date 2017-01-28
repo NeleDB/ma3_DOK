@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title> DOK | <?php echo $_SESSION['page'] ?></title>
+    <title> DOK | <?php echo $_GET['page'] ?></title>
     <meta name="description" content="Paranormalia, het eerste paranormale truck festival"/>
     <meta name="keywords" content="Paranormalia, truck festival, paranormaal"/>
     <meta name="author" content="Nele De Bruycker"/>
@@ -13,7 +13,6 @@
 </head>
     <title>DOK</title>
     <?php echo $css;?>
-    <link rel="stylesheet" href="css/theme1.css"/>
     <script>
 
       WebFontConfig = {
@@ -127,7 +126,6 @@
     </footer>
     <?php echo $js;?>
     <?php  if($_SESSION['page'] === "program"): ?>
-      <script type="text/javascript" src="js/caleandar.js"></script>
     <?php endif; ?>
   </body>
 </html>

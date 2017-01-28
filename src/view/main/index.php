@@ -1,4 +1,3 @@
-<?php $_SESSION['page'] = "home"; ?>
 <header class="header">
   <picture class="header-image">
     <source type="image/webp" srcset="assets/img/header.webp" height="613" width="1052" />

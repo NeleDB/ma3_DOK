@@ -358,7 +358,7 @@ const caleandar = (el, data, settings) => {
 };
 
 
-const init = () => {
+export default () => {
   fetch(`index.php?page=program&t=${Date.now()}`, {
     headers: new Headers({
       Accept: `application/json`
@@ -388,5 +388,3 @@ const createData = dataElement => {
   );
   return eventsArray;
 };
-
-init();

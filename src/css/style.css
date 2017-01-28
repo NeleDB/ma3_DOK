@@ -1,4 +1,5 @@
 @import 'reset.css';
+@import 'theme1.css';
 
 :root {
   --lightpink: #ebb2b3;
@@ -491,6 +492,21 @@ span {
   flex-wrap: wrap;
   width: 90%;
   margin: auto;
+}
+
+.month-select {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  margin: auto;
+  margin-bottom: 2rem;
+
+  @apply --adam-font-title;
+
+  &-link {
+    color: black;
+    text-decoration: none;
+  }
 }
 
 .detail {

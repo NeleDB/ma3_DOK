@@ -83,11 +83,29 @@ class EventsController extends Controller {
          'value' => $_GET["title"]
       );
     } else {
+      if(!isset($_GET["month"])){
+        $month = date('m');
+      }else {
+        $month = $_GET["month"];
+      }
+      //add leading zero
+      if($month<10): $month = sprintf("%02d", $month); endif;
+
+      $startdate =  "2017-$month-01";
+      $enddate =  "2017-$month-31";
+
       $conditions[] = array(
         'field' => 'start',
-        'comparator' => '<',
-        'value' => 'date("Y-m-d")'
+        'comparator' => '>=',
+        'value' => $startdate
       );
+      $conditions[] = array(
+        'field' => 'end',
+        'comparator' => '<=',
+        'value' => $enddate
+      );
+      $month++;
+      $_GET["month"] = $month;
     }
     //example: events ending in may 2017
     // $conditions[0] = array(

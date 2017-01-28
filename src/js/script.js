@@ -1,3 +1,5 @@
+import caleandar from './lib/caleandar.js';
+
 const $filterMore = document.querySelector(`.filter-more`);
 const $tags = document.querySelector(`.filter-form-tags`);
 const $tagTitle = document.querySelector(`.filter-tags`);
@@ -11,6 +13,7 @@ const prakArr = [`Bereikbaarheid`, `DOKBewoner`, `DOKKeuken`];
 const zoneArr = [`Kantine`, `Park`, `Markt`, `Box`, `Arena`];
 
 const init = () => {
+  caleandar();
   const $url = window.location.href;
   console.log($url);
   if ($url.includes(`program`)) {
@@ -103,8 +106,8 @@ const footerNavigation = () => {
     $prakLink.classList.add(`closed`);
     $zonesLink.classList.add(`closed`);
   } else {
-    $prakLink.innerHTML = `Praktisch &#9651`;
-    $zonesLink.innerHTML = `Zones &#9651`;
+    $prakLink.innerHTML = `Praktisch`;
+    $zonesLink.innerHTML = `Zones`;
   }
 
   $prakLink.addEventListener(`click`, openPraktisch);

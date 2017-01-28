@@ -1,4 +1,4 @@
-<?php $_SESSION['page'] = "program"; ?>
+<?php $monthArray = ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'Novermber', 'December']; ?>
 
 <section class="calendar">
   <header class="section-title">
@@ -125,4 +125,17 @@
     <?php endforeach; ?>
     <?php endif; ?>
   </div>
+</section>
+<section class="month-select">
+  <?php $currentMonth = $_GET["month"]-1;
+  $nextMonth = $currentMonth+1;
+  $prevMonth = $currentMonth-1;
+
+  if($nextMonth === 13): $nextMonth = 1;
+  elseif($prevMonth === 0): $prevMonth = 12;
+  endif;
+  ?>
+  <a class="month-select-link" href="index.php?page=program&month=<?php echo $prevMonth ?>"> &#9664;<?php echo $monthArray[$prevMonth-1]?></a>
+  <a class="month-select-link" href="index.php?page=program&month=<?php echo $nextMonth?>"><?php echo $monthArray[$nextMonth-1]?> &#9658;</a>
+
 </section>

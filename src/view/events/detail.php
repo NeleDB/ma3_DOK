@@ -1,4 +1,3 @@
-<?php $_SESSION['page'] = "detail"; ?>
 <?php
 foreach( $events as $event ):
 ?>
