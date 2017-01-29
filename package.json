@@ -25,7 +25,7 @@
     "file-loader": "^0.9.0",
     "gulp": "^3.9.1",
     "html-loader": "^0.4.4",
-    "imagemin": "^5.2.2",
+    "image-webpack-loader": "^3.1.0",
     "isomorphic-fetch": "^2.2.1",
     "local-web-server": "^1.2.6",
     "lodash": "^4.17.4",
@@ -44,9 +44,5 @@
     "webpack": "beta",
     "webpack-config-htmls": "^1.0.1",
     "webpack-dev-server": "beta"
-  },
-  "dependencies": {
-    "imagemin-mozjpeg": "^6.0.0",
-    "imagemin-pngquant": "^5.0.0"
   }
 }

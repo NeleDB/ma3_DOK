@@ -11,7 +11,7 @@ const configHtmls = require(`webpack-config-htmls`)();
 const extractCSS = new ExtractTextWebpackPlugin(`css/style.css`);
 
 // change for production build on different server path
-const publicPath = `/`;
+const publicPath = `/nele.de.bruycker/20162017/ma3/dok/`;
 
 const port = 3000;
 
@@ -31,7 +31,7 @@ const config = {
 
   // no HTML entry points for production build (bundled in JavaScript)
   entry: [
-    //require.resolve(`react-dev-utils/webpackHotDevClient`),
+    require.resolve(`react-dev-utils/webpackHotDevClient`),
     `./src/css/style.css`,
     `./src/js/script.js`
   ],
@@ -152,7 +152,7 @@ if (process.env.NODE_ENV === `production`) {
 
   //image optimizing
   config.module.rules.push({
-    test: /\.(svg|png|jpe?g|gif|webp)$/,
+    test: /\.(svg|png|jpe?g|gif)$/,
     loader: `image-webpack-loader`,
     enforce: `pre`
   });

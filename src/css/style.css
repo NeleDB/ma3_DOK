@@ -464,6 +464,12 @@ span {
     margin: 2rem 0;
     padding: 1rem;
     flex: 1;
+    transition: all .7s;
+    vertical-align: middle;
+
+    &:hover {
+      box-shadow: inset 40rem 0 0 0 var(--lightblue);
+    }
   }
 
   &-link {
