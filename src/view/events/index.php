@@ -85,8 +85,10 @@
     <h1>Volgende evenementen</h1>
   </header>
   <div class="program-events flex-next">
-    <?php if(empty($events)):?>
-      <p class="no-events">Er zijn geen evenementen</p>
+    <?php if(empty($events) && isset($_GET["action"]) && $_GET["action"] === 'search'):?>
+      <p class="no-events">Er zijn geen evenementen geselecteerd</p>
+    <?php elseif(empty($events)): ?>
+      <p class="no-events">Er zijn geen evenementen in deze maand, </br>ga naar de volgende maand</p>
     <?php else: ?>
     <?php
     foreach( $events as $event ):
@@ -94,10 +96,13 @@
     <?php $info = pathinfo($event["picture"]);?>
       <article class="event">
         <a href="index.php?page=detail&id=<?php echo $event["id"]?>">
-          <picture class="event-picture-div">
-            <source type="image/webp" srcset="assets/img/programma-images/<?php echo $info["filename"].'.webp'?>" />
-            <img class="event-picture" src="assets/img/programma-images/<?php echo $event["picture"];?>"/>
-          </picture>
+          <div class="event-picture-container">
+              <picture class="event-picture-div">
+                <source type="image/webp" srcset="assets/img/programma-images/<?php echo $info["filename"].'.webp'?>" />
+                <img class="event-picture" src="assets/img/programma-images/<?php echo $event["picture"];?>"/>
+              </picture>
+              <a class="event-picture-link" href="index.php?page=detail&id=<?php echo $event["id"]?>">Lees meer &rarr;</a>
+          </div>
         </a>
         <header>
           <h1 class="event-title"><?php echo $event["title"];?></h1>

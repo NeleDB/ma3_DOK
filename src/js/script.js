@@ -44,6 +44,7 @@ const hideShowFilter = () => {
   $openCalendar.classList.remove(`hidden`);
   $calendar.setAttribute(`style`, `display: none`);
   $calendar.classList.add(`hidden`);
+  $openCalendar.innerHTML = `Open agenda &#9661`;
 
   if ($innerwidth < 500) {
     $filterMore.classList.remove(`hidden`);

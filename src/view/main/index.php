@@ -57,9 +57,16 @@
         $i++;
         if($i === 4) break;
       ?>
+      <?php $info = pathinfo($event["picture"]);?>
         <article class="event">
           <a href="index.php?page=detail&id=<?php echo $event["id"]?>">
-            <img class="event-picture" src="assets/img/programma-images/<?php echo $event["picture"];?>"/>
+            <div class="event-picture-container">
+                <picture class="event-picture-div">
+                  <source type="image/webp" srcset="assets/img/programma-images/<?php echo $info["filename"].'.webp'?>" />
+                  <img class="event-picture" src="assets/img/programma-images/<?php echo $event["picture"];?>"/>
+                </picture>
+                <a class="event-picture-link" href="index.php?page=detail&id=<?php echo $event["id"]?>">Lees meer &rarr;</a>
+            </div>
           </a>
           <header>
             <h1 class="event-title"><?php echo $event["title"];?></h1>

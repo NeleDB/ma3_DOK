@@ -85,8 +85,17 @@ foreach( $events as $event ):
     <?php if(count($eventssamedate) === 1 && $eventsamedate["id"] === $event["id"] ): ?>
       <p class="no-events">Geen evenementen op dezelfde dag</p>
     <?php else: ?>
+      <?php $info = pathinfo($eventsamedate["picture"]);?>
       <article class="event" <?php if($eventsamedate["id"] === $event["id"]) echo 'style="display:none"';?>>
-        <a href="index.php?page=detail&id=<?php echo $eventsamedate["id"]?>"><img class="event-picture" src="assets/img/programma-images/<?php echo $eventsamedate["picture"];?>"/></a>
+        <a href="index.php?page=detail&id=<?php echo $eventsamedate["id"]?>">
+          <div class="event-picture-container">
+              <picture class="event-picture-div">
+                <source type="image/webp" srcset="assets/img/programma-images/<?php echo $info["filename"].'.webp'?>" />
+                <img class="event-picture" src="assets/img/programma-images/<?php echo $eventsamedate["picture"];?>"/>
+              </picture>
+              <a class="event-picture-link" href="index.php?page=detail&id=<?php echo $eventsamedate["id"]?>">Lees meer &rarr;</a>
+          </div>
+        </a>
         <header>
           <h1 class="event-title"><?php echo $eventsamedate["title"];?></h1>
         </header>

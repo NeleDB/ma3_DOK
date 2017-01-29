@@ -306,6 +306,8 @@ const showInfo = event => {
   $header.classList.add(`calendar-title`);
   const $title = document.createElement(`h1`);
   const $datum = document.createElement(`p`);
+  const $link = document.createElement(`a`);
+  $link.classList.add(`calendar-link`);
 
   const dateTime = (event.start).split(` `);
   const date = dateTime[0].split(`-`);
@@ -313,18 +315,20 @@ const showInfo = event => {
 
   $title.innerHTML = event.title;
   $datum.innerHTML = (`${`${date[2]  }/${  date[1]}` + ` `}${  time[0]  }:${  time[1]}`);
+  $link.setAttribute(`href`, `index.php?page=detail&id=${event.id}`);
 
   $header.appendChild($title);
   $article.appendChild($header);
   $article.appendChild($datum);
+  $link.appendChild($article);
 
-  $calendarDetail.appendChild($article);
+  $calendarDetail.appendChild($link);
 
   $articles = document.querySelectorAll(`.calendar-article`).length;
 };
 
 const deleteElements = () => {
-  console.log(`hello`);
+  //console.log(`hello`);
   const $calendarDetail = document.querySelector(`.calendar-detail`);
   //const $article = document.querySelector(`.calendar-article`);
   console.log($articles);

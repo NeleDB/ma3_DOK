@@ -56,3 +56,7 @@ html {
 *, *::before, *::after { /* stylelint-disable-line */
   box-sizing: inherit;
 }
+
+a {
+  text-decoration: none;
+}

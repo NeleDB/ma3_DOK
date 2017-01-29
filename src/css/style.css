@@ -47,7 +47,6 @@ body {
   }
 
   &-link {
-    text-decoration: none;
     color: black;
     font-family: 'Adam CG';
     padding-bottom: 4rem;
@@ -239,7 +238,6 @@ span {
 .programma-button {
   display: flex;
   justify-content: center;
-  text-decoration: none;
 }
 
 .event {
@@ -264,16 +262,38 @@ span {
     height: 20vw;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     object-fit: cover;
+    transition: all .7s ease;
 
     &-div {
       width: 100%;
       height: 100%;
     }
 
-    &:hover {
+    &-container {
       opacity: .5;
       filter: grayscale(100%);
-      transition: .3s ease-in-out;
+      position: relative;
+
+      &:hover {
+        opacity: 1;
+        filter: grayscale(0%);
+        transition: .3s ease-in-out;
+      }
+    }
+
+    &-link {
+      position: absolute;
+      background-color: rgba(0, 0, 0, .5);
+      top: 75%;
+      left: 45%;
+      color: white;
+      border: .1rem solid white;
+      padding: 1rem;
+      transition: all .7s ease;
+
+      &:hover {
+        left: 40%;
+      }
     }
   }
 
@@ -439,9 +459,15 @@ span {
 
   &-article {
     background-color: var(--darkblue);
+    width: 100%;
     color: white;
     margin: 2rem 0;
     padding: 1rem;
+    flex: 1;
+  }
+
+  &-link {
+    width: 100%;
   }
 
   &-title {
@@ -497,14 +523,12 @@ span {
 
   &-more {
     color: white;
-    text-decoration: none;
     margin-top: 2rem;
   }
 }
 
 .open-calendar {
   color: white;
-  text-decoration: none;
   margin-bottom: 2rem;
 }
 
@@ -523,6 +547,7 @@ span {
 
 .no-events {
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .program-events {
@@ -543,7 +568,6 @@ span {
 
   &-link {
     color: black;
-    text-decoration: none;
   }
 }
 
@@ -659,7 +683,6 @@ span {
 
   &-navigation-link {
     color: white;
-    text-decoration: none;
   }
 }
 
@@ -785,6 +808,10 @@ span {
 
   .table {
     width: 100%;
+  }
+
+  .event-picture-link {
+    top: 40%;
   }
 }
 
