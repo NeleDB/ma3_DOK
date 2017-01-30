@@ -1,5 +1,5 @@
 <?php
-foreach( $events as $event ):
+  foreach( $events as $event ):
 ?>
 <?php $info = pathinfo($event["picture"]);?>
 <header class="detail-header">

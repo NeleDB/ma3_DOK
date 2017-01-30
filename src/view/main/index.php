@@ -1,19 +1,24 @@
 <header class="header">
-  <picture class="header-image">
-    <source type="image/webp" srcset="assets/img/header.webp" height="613" width="1052" />
-    <img class="header-image"
-     src="assets/img/header.png"
-     srcset="assets/img/header.png 1052w,
-             assets/img/header_75.png 789w,
-             assets/img/header_50.png 526w,
-             assets/img/default.gif 1w"
-     height="613" width="1052"
-     sizes="(min-width: 700px) 100vw,
-       (min-width: 500px) 90vw,
-       (min-width: 320px) 85vw,
-       vw"
-     alt="Dok2017"/>
-  </picture>
+    <picture class="header-image">
+      <source type="image/webp" media="(min-width: 960px)" srcset="assets/img/header.webp" />
+      <source media="(min-width: 960px)" srcset="assets/img/header.png" />
+      <source type="image/webp" media="(min-width: 570px)" srcset="assets/img/header_75.webp" />
+      <source media="(min-width: 570px)" srcset="assets/img/header_75.png" />
+      <source type="image/webp" media="(min-width: 320px)" srcset="assets/img/header_50.webp" />
+      <source media="(min-width: 320px)" srcset="assets/img/header_50.png" />
+      <img class="header-image"
+        src="assets/img/header.png"
+        srcset="assets/img/header.png 1052w,
+          assets/img/header_75.png 789w,
+          assets/img/header_50.png 526w,
+          assets/img/default.gif 1w"
+          height="613" width="1052"
+          sizes="(min-width: 700px) 100vw,
+            (min-width: 500px) 90vw,
+            (min-width: 320px) 85vw,
+            1vw"
+          alt="Dok2017"/>
+    </picture>
   <div class="header-title">
     <h1 class="dok-title">Dok</h1>
     <h2 class="dok-date">01 Mei | 25 Sep</h2>
@@ -34,9 +39,9 @@
               <pattern id="pattern-1" width="50" height="50" x="550.100838" y="-43.1549552" patternUnits="userSpaceOnUse">
                   <use xlink:href="#image-2" transform="scale(0.1,0.1)"></use>
               </pattern>
-              <image id="image-2" width="500" height="500" xlink:href="assets/svg/pattern2.svg"</image>
+              <image id="image-2" width="500" height="500" xlink:href="assets/svg/pattern2.svg"/>
           </defs>
-          <path d="M681.604882,102.417132 C681.604882,102.417132 689.717475,76.6052046 735.344232,63.7590684 C780.97099,50.9129321 772.068675,25.704065 813.608025,12.8052807 C855.147375,-0.0935036694 941.203087,-4.04689731 946.582765,131.373586 C951.962444,266.79407 889.282488,371.305333 754.44592,345.325889 C619.609352,319.346446 600.100838,219.808035 600.100838,202.716547 C600.100838,185.62506 601.393109,178.096381 601.393109,178.096381 L685.094015,178.488849 L681.604882,102.417132 Z" id="Path-2" stroke="none" fill="#f5c13e" fill-rule="evenodd"></path>
+          <path d="M681.604882,102.417132 C681.604882,102.417132 689.717475,76.6052046 735.344232,63.7590684 C780.97099,50.9129321 772.068675,25.704065 813.608025,12.8052807 C855.147375,-0.0935036694 941.203087,-4.04689731 946.582765,131.373586 C951.962444,266.79407 889.282488,371.305333 754.44592,345.325889 C619.609352,319.346446 600.100838,219.808035 600.100838,202.716547 C600.100838,185.62506 601.393109,178.096381 601.393109,178.096381 L685.094015,178.488849 L681.604882,102.417132 Z" id="Path-1" stroke="none" fill="#f5c13e" fill-rule="evenodd"></path>
           <path d="M681.604882,102.417132 C681.604882,102.417132 689.717475,76.6052046 735.344232,63.7590684 C780.97099,50.9129321 772.068675,25.704065 813.608025,12.8052807 C855.147375,-0.0935036694 941.203087,-4.04689731 946.582765,131.373586 C951.962444,266.79407 889.282488,371.305333 754.44592,345.325889 C619.609352,319.346446 600.100838,219.808035 600.100838,202.716547 C600.100838,185.62506 601.393109,178.096381 601.393109,178.096381 L685.094015,178.488849 L681.604882,102.417132 Z" id="Path-2" stroke="none" fill="url(#pattern-1)" fill-rule="evenodd"></path>
       </svg>
       <picture class="intro-picture">
@@ -63,7 +68,7 @@
             <div class="event-picture-container">
                 <picture class="event-picture-div">
                   <source type="image/webp" srcset="assets/img/programma-images/<?php echo $info["filename"].'.webp'?>" />
-                  <img class="event-picture" src="assets/img/programma-images/<?php echo $event["picture"];?>"/>
+                  <img class="event-picture" src="assets/img/programma-images/<?php echo $event["picture"];?>" alt="<?php echo $info["filename"]?>"/>
                 </picture>
                 <a class="event-picture-link" href="index.php?page=detail&id=<?php echo $event["id"]?>">Lees meer &rarr;</a>
             </div>
@@ -108,21 +113,21 @@
     <div class="numbers">
       <article class="numbers-article">
         <div class="number">
-          <img class="number-image" src="assets/img/dok-number1.png" alt="dokbewoners" width="155px" height="155px"/>
+          <img class="number-image" src="assets/img/dok-number1.png" alt="dokbewoners" width="155" height="155"/>
           <p class="number-text">267</p>
         </div>
         <p class="number-title">DOKbewoners</p>
       </article>
       <article class="numbers-article">
         <div class="number">
-          <img class="number-image" src="assets/img/dok-number2.png" alt="dokbezoekers" width="155px" height="155px"/>
+          <img class="number-image" src="assets/img/dok-number2.png" alt="dokbezoekers" width="155" height="155"/>
           <p class="number-text">1058</p>
         </div>
         <p class="number-title">Bezoekers in 2016</p>
       </article>
       <article class="numbers-article">
         <div class="number">
-          <img class="number-image" src="assets/img/dok-number3.png" alt="creatieve-manoeuvers" width="155px" height="155px"/>
+          <img class="number-image" src="assets/img/dok-number3.png" alt="creatieve-manoeuvers" width="155" height="155"/>
           <p class="number-text">457</p>
         </div>
         <p class="number-title">Creatieve manoeuvers</p>
@@ -158,7 +163,7 @@
   </section>
   <section class="nieuwsbrief">
     <div class="flex-next nieuwsbrief-zin">
-      <img src="assets/svg/enveloppe.svg" alt="email-enveloppe" width="70px" height="37px"/>
+      <img src="assets/svg/enveloppe.svg" alt="email-enveloppe" width="70" height="37"/>
       <p>Ik ontvang graag op <input class="nieuwsbrief-input" type="email" name="email" value="" placeholder="email adres" required/> mails over DOK</p>
     </div>
     <p class="error"></p>

@@ -28,7 +28,6 @@ class Controller {
       $this->set('js', '<script src="js/main.js"></script>');
     }
 
-    $this->set('fbmeta', '<meta property="og:description" content="Werkplek voor verpozing &amp; creatieve manoeuvers" /><meta property="og:image" content="http://student.howest.be/nele.de.bruycker/20162017/ma3/dok/assets/img/dok-number1.png" />');
     //call the correct function in the controller
     call_user_func(array($this, $this->route['action']));
   }

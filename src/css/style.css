@@ -20,10 +20,6 @@ body {
   font-size: 1.8rem;
 }
 
-.hidden {
-  display: none;
-}
-
 .flex-next {
   display: flex;
   justify-content: space-around;
@@ -241,13 +237,13 @@ span {
 }
 
 .event {
-  width: 20vw;
+  width: 20%;
   color: white;
   background-color: var(--darkblue);
   margin: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  min-width: 25rem;
+  flex: 0 1 25rem;
 
   &::after {
     content: '';
@@ -347,9 +343,7 @@ span {
 }
 
 .number {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 
   @apply --adam-font-title;
 
@@ -359,6 +353,10 @@ span {
 
   &-text {
     position: absolute;
+    top: 45%;
+    left: 36%;
+    text-align: center;
+    font-size: 2.4rem;
   }
 
   &-title {
@@ -500,11 +498,6 @@ span {
       display: flex;
       flex-wrap: wrap;
       margin-top: 2rem;
-
-      &:checked {
-        background: none;
-        background: var(--yellow);
-      }
     }
   }
 
@@ -559,7 +552,7 @@ span {
 .program-events {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
+  width: 90vw;
   margin: auto;
 }
 
@@ -838,10 +831,16 @@ span {
 
   .next-events .event {
     width: 90vw;
+    flex: 1 1 auto;
 
     &-title {
       font-size: 90%;
     }
+  }
+
+  .event-picture-container {
+    opacity: 1;
+    filter: grayscale(0%);
   }
 
   .footer {
@@ -910,6 +909,10 @@ span {
 
 @media (width <= 580px) {
 
+  .dok-date {
+    width: 30vw;
+  }
+
   .numbers-article {
     display: flex;
     flex-direction: row;
@@ -937,7 +940,7 @@ span {
   }
 
   .program-events .event {
-    width: 90vw;
+    width: 80vw;
   }
 
   .praktisch-info {
@@ -948,4 +951,12 @@ span {
     width: 100%;
   }
 
+  .event {
+    flex: 1 1 auto;
+  }
+
+}
+
+.hidden {
+  display: none;
 }

@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="26px" height="21px" viewBox="0 0 26 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-    <title>ion-social-twitter - Ionicons</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="28" font-family="Ionicons" font-weight="400">
-        <g id="Home" transform="translate(-1132.000000, -31.000000)" fill="#E67468">
-            <g id="navigatie" transform="translate(0.000000, -24.000000)">
-                <text id="ion-social-twitter---Ionicons">
-                    <tspan x="1132.1" y="76"></tspan>
-                </text>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="26" height="21" viewBox="0 0 26 21" xmlns="http://www.w3.org/2000/svg"><title>ion-social-twitter - Ionicons</title><text transform="translate(-1132 -55)" fill="#E67468" fill-rule="evenodd" font-size="28" font-family="Ionicons" font-weight="400"><tspan x="1132.1" y="76"></tspan></text></svg>

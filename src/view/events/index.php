@@ -99,7 +99,7 @@
           <div class="event-picture-container">
               <picture class="event-picture-div">
                 <source type="image/webp" srcset="assets/img/programma-images/<?php echo $info["filename"].'.webp'?>" />
-                <img class="event-picture" src="assets/img/programma-images/<?php echo $event["picture"];?>"/>
+                <img class="event-picture" src="assets/img/programma-images/<?php echo $event["picture"];?>" alt="<?php echo $info["filename"]?>"/>
               </picture>
               <a class="event-picture-link" href="index.php?page=detail&id=<?php echo $event["id"]?>">Lees meer &rarr;</a>
           </div>

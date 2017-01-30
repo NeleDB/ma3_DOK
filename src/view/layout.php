@@ -3,22 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title> DOK | <?php echo $_GET['page'] ?></title>
-    <meta name="description" content="Paranormalia, het eerste paranormale truck festival"/>
-    <meta name="keywords" content="Paranormalia, truck festival, paranormaal"/>
+    <meta name="description" content="Dok Gent evenementen deze zomer in Gent"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="keywords" content="DOK Gent, 1mei tot 25sep, Gent, dokken"/>
     <meta name="author" content="Nele De Bruycker"/>
-    <meta property="og:url" content="http://www.your-domain.com/your-page.html" />
-    <meta property="og:type" content="DOK GENT" />
-    <meta property="og:title" content="DOK GENT" />
-    <?php echo $fbmeta;?>
-</head>
-    <title>DOK</title>
     <?php echo $css;?>
     <script>
 
       WebFontConfig = {
         custom: {
           families: ['Adam CG'],
-          urls: ['../assets/fonts/adamcg/adamcg.css']
+          urls: ['../dok/assets/fonts/adamcg/adamcg.css']
         }
       };
 
@@ -78,9 +73,8 @@
     <div class="container">
       <?php if(!empty($_SESSION['info'])): ?><div class="alert alert-success"><?php echo $_SESSION['info'];?></div><?php endif; ?>
       <?php if(!empty($_SESSION['error'])): ?><div class="alert alert-danger"><?php echo $_SESSION['error'];?></div><?php endif; ?>
-
-      <?php echo $content; ?>
     </div>
+      <?php echo $content; ?>
 
     <footer class="footer" id = "footer">
       <nav>

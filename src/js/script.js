@@ -19,6 +19,10 @@ const init = () => {
     caleandar();
     hideShowFilter();
     addEventListener(`resize`, () => hideShowFilter());
+
+    $openCalendar.classList.remove(`hidden`);
+    $calendar.classList.add(`hidden`);
+    $openCalendar.innerHTML = `Open agenda &#9661`;
   } else if ($url.includes(`detail`)) {
     console.log(`detail`);
   } else {
@@ -41,19 +45,15 @@ const init = () => {
 const hideShowFilter = () => {
   //console.log(`Hello, DOK`);
   const $innerwidth = window.innerWidth;
-  $openCalendar.classList.remove(`hidden`);
-  $calendar.setAttribute(`style`, `display: none`);
-  $calendar.classList.add(`hidden`);
-  $openCalendar.innerHTML = `Open agenda &#9661`;
 
   if ($innerwidth < 500) {
     $filterMore.classList.remove(`hidden`);
     $tagTitle.classList.add(`hidden`);
-    $tags.setAttribute(`style`, `display: none`);
+    $tags.classList.add(`hidden`);
   } else {
     $filterMore.classList.add(`hidden`);
     $tagTitle.classList.remove(`hidden`);
-    $tags.setAttribute(`style`, `display: flex`);
+    $tags.classList.remove(`hidden`);
   }
 
   $filterMore.addEventListener(`click`, clickMoreFilters);
@@ -63,12 +63,12 @@ const hideShowFilter = () => {
 const clickMoreFilters = () => {
   if ($tagTitle.classList.contains(`hidden`)) {
     $tagTitle.classList.remove(`hidden`);
-    $tags.setAttribute(`style`, `display: flex`);
+    $tags.classList.remove(`hidden`);
     $filterMore.innerHTML = ` `;
     $filterMore.innerHTML = `Minder filters &#9651`;
   } else {
     $tagTitle.classList.add(`hidden`);
-    $tags.setAttribute(`style`, `display: none`);
+    $tags.classList.add(`hidden`);
     $filterMore.innerHTML = ` `;
     $filterMore.innerHTML = `Meer filters &#9661`;
   }
@@ -77,12 +77,12 @@ const clickMoreFilters = () => {
 const clickOpenCalendar = () => {
   if ($calendar.classList.contains(`hidden`)) {
     $calendar.classList.remove(`hidden`);
-    $calendar.setAttribute(`style`, `display: flex`);
+    $calendar.classList.remove(`hidden`);
     $openCalendar.innerHTML = ` `;
     $openCalendar.innerHTML = `Sluit agenda &#9651`;
   } else {
     $calendar.classList.add(`hidden`);
-    $calendar.setAttribute(`style`, `display: none`);
+    $calendar.classList.add(`hidden`);
     $openCalendar.innerHTML = ` `;
     $openCalendar.innerHTML = `Open agenda &#9661`;
   }
