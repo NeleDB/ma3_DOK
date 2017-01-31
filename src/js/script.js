@@ -34,7 +34,7 @@ const init = () => {
   addEventListener(`resize`, () => footerNavigation());
 
   const $innerwidth = window.innerWidth;
-  if ($innerwidth < 500) {
+  if ($innerwidth < 780) {
     $prakLink.classList.add(`closed`);
     $prakLink.innerHTML = `Praktisch &#9661`;
     $zonesLink.classList.add(`closed`);
@@ -46,7 +46,7 @@ const hideShowFilter = () => {
   //console.log(`Hello, DOK`);
   const $innerwidth = window.innerWidth;
 
-  if ($innerwidth < 500) {
+  if ($innerwidth < 780) {
     $filterMore.classList.remove(`hidden`);
     $tagTitle.classList.add(`hidden`);
     $tags.classList.add(`hidden`);
@@ -92,7 +92,7 @@ const footerNavigation = () => {
 
   const $innerwidth = window.innerWidth;
 
-  if ($innerwidth < 500) {
+  if ($innerwidth < 780) {
     $prakLink.classList.add(`closed`);
     $zonesLink.classList.add(`closed`);
     if ($prakLink.classList.contains(`closed`)) {
@@ -101,10 +101,10 @@ const footerNavigation = () => {
     if ($zonesLink.classList.contains(`closed`)) {
       $zonesLink.innerHTML = `Zones &#9661`;
     }
-    console.log(`500`);
+    //console.log(`500`);
     $prakLink.addEventListener(`click`, openPraktisch);
     $zonesLink.addEventListener(`click`, openZones);
-  } else if ($innerwidth > 500) {
+  } else if ($innerwidth > 780) {
     $prakLink.innerHTML = `Praktisch`;
     $zonesLink.innerHTML = `Zones`;
   }

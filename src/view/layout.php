@@ -36,7 +36,7 @@
     <nav class="navigation">
       <ul class="navigation-list">
         <li class="navigation-item">
-          <a class="" href="index.php"><img src="assets/img/dokgent-logo.png" alt="dok-logo" width="111" height="42"></a>
+          <a class="" href="index.php"><img class="dok-logo" src="assets/img/dokgent-logo.png" alt="dok-logo" width="111" height="42"></a>
         </li>
         <li class="navigation-item">
           <a class="navigation-link hidden-mobile" href="#">Zones</a>

@@ -64,12 +64,16 @@
   <article class="media-share">
     <header>
       <h1 class="section-title">Deel het met je vrienden</h1>
+      <?php
+        $string = $event["title"];
+        $new = str_replace(' ', '%20', $string);
+      ?>
     </header>
     <div class="fb-share-button" data-href="https://student.howest.be/nele.de.bruycker/20162017/ma3/dok/index.php?page=detail&amp;id=<?php echo $event["id"];?>" data-layout="button" data-size="large" data-mobile-iframe="true">
-      <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstudent.howest.be%2Fnele.de.bruycker%2F20162017%2Fma3%2Fdok%2Findex.php%3Fpage%3Ddetail%26id%3D<?php echo $event["id"];?>&amp;src=sdkpreparse">Delen</a>
+      <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstudent.howest.be%2Fnele.de.bruycker%2F20162017%2Fma3%2Fdok%2Findex.php%3Fpage%3Ddetail%26id%3D&text=Ik%20ga%20naar%20<?php echo $new?><?php echo $event["id"];?>&amp;src=sdkpreparse">Delen</a>
     </div>
     <div class="twitter-share-button">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false" data-size="large">Tweet</a>
+      <a href="https://twitter.com/share?text=Ik%20ga%20naar%20<?php echo $new?>" class="twitter-share-button" data-show-count="false" data-size="large">Tweet</a>
       <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </article>
